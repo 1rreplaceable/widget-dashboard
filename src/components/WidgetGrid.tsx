@@ -16,7 +16,7 @@ export const WidgetGrid: React.FC<WidgetGridProps> = ({
   layouts,
   isEditMode = false,
   onLayoutChange,
-  width = 1200,
+  width = 1400,
   height = 800,
   gridSize = 20,
 }) => {

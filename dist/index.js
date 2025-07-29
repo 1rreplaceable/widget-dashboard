@@ -132,7 +132,7 @@ var WidgetContainer = function (_a) {
 };
 
 var WidgetGrid = function (_a) {
-    var layouts = _a.layouts, _b = _a.isEditMode, isEditMode = _b === void 0 ? false : _b, onLayoutChange = _a.onLayoutChange, _c = _a.width, width = _c === void 0 ? 1200 : _c, _d = _a.height, height = _d === void 0 ? 800 : _d, _e = _a.gridSize, gridSize = _e === void 0 ? 20 : _e;
+    var layouts = _a.layouts, _b = _a.isEditMode, isEditMode = _b === void 0 ? false : _b, onLayoutChange = _a.onLayoutChange, _c = _a.width, width = _c === void 0 ? 1400 : _c, _d = _a.height, height = _d === void 0 ? 800 : _d, _e = _a.gridSize, gridSize = _e === void 0 ? 20 : _e;
     var gridStyle = {
         position: 'relative',
         width: "".concat(width, "px"),
@@ -160,7 +160,7 @@ var WidgetGrid = function (_a) {
 };
 
 var WidgetDashboard = function (_a) {
-    var layouts = _a.layouts, _b = _a.isEditMode, isEditMode = _b === void 0 ? false : _b, onLayoutsChange = _a.onLayoutsChange, _c = _a.width, width = _c === void 0 ? 1200 : _c, _d = _a.height, height = _d === void 0 ? 800 : _d, _e = _a.gridSize, gridSize = _e === void 0 ? 20 : _e;
+    var layouts = _a.layouts, _b = _a.isEditMode, isEditMode = _b === void 0 ? false : _b, onLayoutsChange = _a.onLayoutsChange, _c = _a.width, width = _c === void 0 ? 1400 : _c, _d = _a.height, height = _d === void 0 ? 800 : _d, _e = _a.gridSize, gridSize = _e === void 0 ? 20 : _e;
     var _f = react.useState(layouts), layoutsState = _f[0], setLayoutsState = _f[1];
     var handleLayoutChange = function (updatedLayout) {
         var newLayouts = layoutsState.map(function (layout) {

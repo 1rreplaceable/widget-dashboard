@@ -1,5 +1,6 @@
 import React from 'react';
 import { WidgetLayout } from '../types/widget';
+import './WidgetDashboard.css';
 interface WidgetDashboardProps {
     layouts: WidgetLayout[];
     isEditMode?: boolean;

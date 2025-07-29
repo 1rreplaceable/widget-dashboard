@@ -16,7 +16,7 @@ export const WidgetDashboard: React.FC<WidgetDashboardProps> = ({
   layouts,
   isEditMode = false,
   onLayoutsChange,
-  width = 1200,
+  width = 1400,
   height = 800,
   gridSize = 20,
 }) => {

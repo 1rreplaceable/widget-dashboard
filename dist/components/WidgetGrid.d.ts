@@ -1,5 +1,6 @@
 import React from 'react';
 import { WidgetLayout } from '../types/widget';
+import './WidgetGrid.css';
 interface WidgetGridProps {
     layouts: WidgetLayout[];
     isEditMode?: boolean;
