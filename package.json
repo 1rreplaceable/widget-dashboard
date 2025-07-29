@@ -1,6 +1,6 @@
 {
   "name": "widget-dashboard",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A flexible widget dashboard library with smooth drag-and-drop functionality",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
@@ -21,12 +21,12 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/your-username/widget-dashboard.git"
+    "url": "git+https://github.com/1rreplaceable/widget-dashboard.git"
   },
   "bugs": {
-    "url": "https://github.com/your-username/widget-dashboard/issues"
+    "url": "https://github.com/1rreplaceable/widget-dashboard/issues"
   },
-  "homepage": "https://github.com/your-username/widget-dashboard#readme",
+  "homepage": "https://github.com/1rreplaceable/widget-dashboard#readme",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",

@@ -2,6 +2,8 @@
 
 유연한 위젯 대시보드와 드래그앤드롭 기능을 제공하는 React 라이브러리입니다.
 
+https://github.com/1rreplaceable/widget-dashboard/assets/1rreplaceable/docs/demo.mov
+
 ## 주요 기능
 
 - 픽셀 단위 정확한 위치/크기 저장
@@ -245,4 +247,4 @@ MIT 라이선스
 
 ## 지원
 
-문제가 있거나 기능 요청이 있으시면 [GitHub Issues](https://github.com/your-username/widget-dashboard/issues)에 등록해 주세요.
+문제가 있거나 기능 요청이 있으시면 [GitHub Issues](https://github.com/1rreplaceable/widget-dashboard/issues)에 등록해 주세요.
