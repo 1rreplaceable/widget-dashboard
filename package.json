@@ -1,18 +1,35 @@
 {
   "name": "widget-dashboard",
-  "version": "1.0.0",
-  "description": "유연한 위젯 대시보드와 부드러운 드래그앤드롭 기능을 제공하는 React 라이브러리",
+  "version": "1.0.2",
+  "description": "A flexible widget dashboard library with smooth drag-and-drop functionality",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist",
-    "README.md",
-    "LICENSE"
+    "dist"
   ],
+  "keywords": [
+    "widget",
+    "dashboard",
+    "drag-and-drop",
+    "react",
+    "typescript",
+    "grid",
+    "layout"
+  ],
+  "author": "1rreplaceable",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/your-username/widget-dashboard.git"
+  },
+  "bugs": {
+    "url": "https://github.com/your-username/widget-dashboard/issues"
+  },
+  "homepage": "https://github.com/your-username/widget-dashboard#readme",
   "scripts": {
     "start": "react-scripts start",
-    "build": "rollup -c",
+    "build": "react-scripts build",
     "build:lib": "rollup -c rollup.config.js",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
@@ -20,41 +37,25 @@
     "build-storybook": "storybook build",
     "prepublishOnly": "npm run build:lib"
   },
-  "keywords": [
-    "react",
-    "widget",
-    "dashboard",
-    "drag-and-drop",
-    "grid",
-    "layout",
-    "typescript",
-    "component-library"
-  ],
-  "author": "Your Name <your.email@example.com>",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/your-username/widget-dashboard.git"
-  },
-  "bugs": {
-    "url": "https://github.com/your-username/widget-dashboard/issues"
-  },
-  "homepage": "https://github.com/your-username/widget-dashboard#readme",
   "peerDependencies": {
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^25.0.0",
     "@rollup/plugin-node-resolve": "^15.0.0",
     "@rollup/plugin-typescript": "^11.0.0",
-    "@storybook/addon-essentials": "^7.0.0",
-    "@storybook/addon-interactions": "^7.0.0",
-    "@storybook/addon-links": "^7.0.0",
-    "@storybook/blocks": "^7.0.0",
-    "@storybook/react": "^7.0.0",
-    "@storybook/react-webpack5": "^7.0.0",
-    "@storybook/testing-library": "^0.2.0",
+    "@storybook/addon-essentials": "^7.6.20",
+    "@storybook/addon-interactions": "^7.6.20",
+    "@storybook/addon-links": "^7.6.20",
+    "@storybook/blocks": "^7.6.20",
+    "@storybook/react": "^7.6.20",
+    "@storybook/react-webpack5": "^7.6.20",
+    "@storybook/testing-library": "^0.2.2",
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.3.0",
     "@testing-library/user-event": "^13.5.0",
@@ -62,21 +63,14 @@
     "@types/node": "^16.11.56",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "eslint": "^8.20.0",
+    "eslint-plugin-storybook": "^9.0.18",
     "react-scripts": "5.0.1",
-    "rollup": "^3.0.0",
+    "rollup": "^4.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
-    "storybook": "^7.0.0",
+    "storybook": "^7.6.20",
     "typescript": "^4.7.4",
     "web-vitals": "^2.1.4"
-  },
-  "dependencies": {},
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
   },
   "browserslist": {
     "production": [

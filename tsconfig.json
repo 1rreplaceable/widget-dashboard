@@ -30,6 +30,8 @@
     "node_modules",
     "dist",
     "build",
-    "storybook-static"
+    "storybook-static",
+    "src/stories",
+    "src/**/*.css"
   ]
 }

@@ -1,6 +1,5 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { WidgetContainerProps } from '../types/widget';
-import './WidgetContainer.css';
 
 export const WidgetContainer: React.FC<WidgetContainerProps> = ({
   layout,

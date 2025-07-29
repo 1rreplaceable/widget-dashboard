@@ -1,7 +1,6 @@
 import React from 'react';
 import { WidgetLayout } from '../types/widget';
 import { WidgetContainer } from './WidgetContainer';
-import './WidgetGrid.css';
 
 interface WidgetGridProps {
   layouts: WidgetLayout[];

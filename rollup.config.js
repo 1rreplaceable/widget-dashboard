@@ -19,13 +19,16 @@ export default {
   ],
   plugins: [
     peerDepsExternal(),
-    resolve(),
+    resolve({
+      extensions: ['.ts', '.tsx', '.js', '.jsx'],
+    }),
     commonjs(),
     typescript({
       tsconfig: './tsconfig.json',
       declaration: true,
       declarationDir: 'dist',
+      exclude: ['src/stories/**/*', 'src/**/*.css'],
     }),
   ],
   external: ['react', 'react-dom'],
-}; 
+};

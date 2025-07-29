@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { WidgetLayout } from '../types/widget';
 import { WidgetGrid } from './WidgetGrid';
-import './WidgetDashboard.css';
 
 interface WidgetDashboardProps {
   layouts: WidgetLayout[];

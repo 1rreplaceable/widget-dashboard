@@ -1,31 +1,30 @@
-# Widget Dashboard Library
+# Widget Dashboard
 
-유연한 위젯 대시보드와 부드러운 드래그앤드롭 기능을 제공하는 React 라이브러리입니다.
+유연한 위젯 대시보드와 드래그앤드롭 기능을 제공하는 React 라이브러리입니다.
 
-## ✨ 주요 기능
+## 주요 기능
 
-- 🎯 **픽셀 단위 정확한 위치/크기**: 342px, 365px 같은 정확한 값으로 저장
-- 🧭 **20px 그리드 스냅**: 부드럽고 정확한 이동과 리사이즈
-- 🎨 **바둑판 격자**: 편집 모드에서 시각적 가이드 제공
-- 🔧 **완전 커스텀**: 사용자가 원하는 컴포넌트를 자유롭게 삽입
-- 📱 **반응형 지원**: 다양한 화면 크기에 대응
-- 🎛️ **편집/보기 모드**: 필요에 따라 모드 전환
+- 픽셀 단위 정확한 위치/크기 저장
+- 20px 그리드 스냅으로 부드러운 이동과 리사이즈
+- 편집 모드에서 바둑판 격자 시각적 가이드
+- 완전 커스텀 위젯 컴포넌트 지원
+- 편집/보기 모드 전환
 
-## 📦 설치
+## 설치
 
 ```bash
 npm install widget-dashboard
 ```
 
-## 🚀 기본 사용법
+## 사용법
 
-### 1. 기본 컴포넌트 import
+### 기본 사용법
 
 ```tsx
 import React, { useState } from 'react';
 import { WidgetDashboard, WidgetLayout } from 'widget-dashboard';
 
-// 커스텀 위젯 컴포넌트 예시
+// 커스텀 위젯 컴포넌트
 const MetricWidget = () => (
   <div style={{ 
     padding: '20px',
@@ -61,17 +60,14 @@ const ChartWidget = () => (
     </div>
   </div>
 );
-```
 
-### 2. 위젯 레이아웃 정의
-
-```tsx
+// 위젯 레이아웃 정의
 const [layouts, setLayouts] = useState<WidgetLayout[]>([
   {
     id: '1',
     title: '사용자 지표',
-    position: { x: 0, y: 0 },        // 픽셀 단위 위치
-    size: { width: 200, height: 120 }, // 픽셀 단위 크기
+    position: { x: 0, y: 0 },
+    size: { width: 200, height: 120 },
     children: <MetricWidget />,
   },
   {
@@ -81,22 +77,11 @@ const [layouts, setLayouts] = useState<WidgetLayout[]>([
     size: { width: 300, height: 200 },
     children: <ChartWidget />,
   },
-  {
-    id: '3',
-    title: '주문 현황',
-    position: { x: 500, y: 0 },
-    size: { width: 240, height: 160 },
-    children: <TableWidget />,
-  },
 ]);
-```
 
-### 3. 대시보드 컴포넌트 사용
-
-```tsx
+// 대시보드 컴포넌트 사용
 function App() {
   const [isEditMode, setIsEditMode] = useState(false);
-  const [layouts, setLayouts] = useState<WidgetLayout[]>([...]);
 
   const handleLayoutsChange = (newLayouts: WidgetLayout[]) => {
     setLayouts(newLayouts);
@@ -107,9 +92,7 @@ function App() {
     <div className="App">
       <div className="app-header">
         <h1>위젯 대시보드</h1>
-        <button 
-          onClick={() => setIsEditMode(!isEditMode)}
-        >
+        <button onClick={() => setIsEditMode(!isEditMode)}>
           {isEditMode ? '보기 모드' : '편집 모드'}
         </button>
       </div>
@@ -127,7 +110,7 @@ function App() {
 }
 ```
 
-## 📋 API Reference
+## API
 
 ### WidgetDashboard Props
 
@@ -159,38 +142,9 @@ interface WidgetLayout {
 }
 ```
 
-## 🎨 스타일링
+## 고급 사용법
 
-### 편집 모드 스타일
-
-편집 모드에서는 다음과 같은 스타일이 적용됩니다:
-
-- **점선 테두리**: 위젯 주변에 `2px dashed #333333` 테두리
-- **바둑판 격자**: 20px × 20px 격자 패턴 배경
-- **리사이즈 핸들**: 우하단에 작은 회색 사각형 핸들
-- **호버 효과**: 마우스 오버 시 테두리 강조
-
-### 커스텀 스타일링
-
-```css
-/* 위젯 컨테이너 커스텀 스타일 */
-.widget-container {
-  /* 기본 스타일 오버라이드 */
-}
-
-.widget-container.edit-mode {
-  /* 편집 모드 스타일 오버라이드 */
-}
-
-/* 리사이즈 핸들 커스텀 스타일 */
-.widget-resize-handle {
-  /* 리사이즈 핸들 스타일 오버라이드 */
-}
-```
-
-## 🔧 고급 사용법
-
-### 1. 다양한 크기의 대시보드
+### 다양한 크기의 대시보드
 
 ```tsx
 // 작은 대시보드
@@ -202,19 +156,7 @@ interface WidgetLayout {
   gridSize={20}
 />
 
-// 큰 대시보드
-<WidgetDashboard 
-  layouts={layouts}
-  isEditMode={true}
-  width={1600}
-  height={1200}
-  gridSize={20}
-/>
-```
-
-### 2. 고정 너비 컨테이너
-
-```tsx
+// 고정 너비 컨테이너
 <div style={{ width: '600px', height: '400px', margin: '0 auto', border: '1px solid #ccc' }}>
   <WidgetDashboard 
     layouts={layouts}
@@ -226,7 +168,7 @@ interface WidgetLayout {
 </div>
 ```
 
-### 3. 레이아웃 저장 및 복원
+### 레이아웃 저장 및 복원
 
 ```tsx
 // 레이아웃 저장
@@ -245,11 +187,11 @@ const loadLayouts = () => {
 // 레이아웃 변경 시 자동 저장
 const handleLayoutsChange = (newLayouts: WidgetLayout[]) => {
   setLayouts(newLayouts);
-  saveLayouts(); // 자동 저장
+  saveLayouts();
 };
 ```
 
-### 4. 동적 위젯 추가/제거
+### 동적 위젯 추가/제거
 
 ```tsx
 const addWidget = () => {
@@ -268,9 +210,7 @@ const removeWidget = (id: string) => {
 };
 ```
 
-## 🎯 그리드 시스템
-
-### 20px 그리드 스냅
+## 그리드 시스템
 
 - 모든 위젯은 20px 단위로 정확히 스냅됩니다
 - 드래그와 리사이즈 모두 20px 단위로 움직입니다
@@ -279,52 +219,30 @@ const removeWidget = (id: string) => {
 ### 권장 위젯 크기
 
 ```tsx
-// 작은 위젯 (100px × 80px)
+// 작은 위젯
 size: { width: 100, height: 80 }
 
-// 중간 위젯 (200px × 150px)
+// 중간 위젯
 size: { width: 200, height: 150 }
 
-// 큰 위젯 (300px × 200px)
+// 큰 위젯
 size: { width: 300, height: 200 }
 
-// 매우 큰 위젯 (400px × 300px)
+// 매우 큰 위젯
 size: { width: 400, height: 300 }
 ```
 
-## 🚨 주의사항
+## 주의사항
 
-1. **위젯 ID**: 각 위젯은 고유한 `id`를 가져야 합니다
-2. **그리드 정렬**: 위치와 크기는 `gridSize`의 배수로 설정하는 것을 권장합니다
-3. **경계 체크**: 위젯이 대시보드 경계를 벗어나지 않도록 자동으로 제한됩니다
-4. **성능**: 많은 위젯을 사용할 때는 성능을 고려하여 적절한 수로 제한하세요
+1. 각 위젯은 고유한 `id`를 가져야 합니다
+2. 위치와 크기는 `gridSize`의 배수로 설정하는 것을 권장합니다
+3. 위젯이 대시보드 경계를 벗어나지 않도록 자동으로 제한됩니다
+4. 많은 위젯을 사용할 때는 성능을 고려하여 적절한 수로 제한하세요
 
-## 🔄 업데이트 로그
+## 라이선스
 
-### v1.0.0
-- 초기 릴리즈
-- 픽셀 단위 정확한 위치/크기 지원
-- 20px 그리드 스냅 시스템
-- 드래그앤드롭 및 리사이즈 기능
-- 편집/보기 모드 전환
-- 바둑판 격자 시각적 가이드
+MIT 라이선스
 
-## 🤝 기여하기
-
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📄 라이선스
-
-이 프로젝트는 MIT 라이선스 하에 배포됩니다. 자세한 내용은 `LICENSE` 파일을 참조하세요.
-
-## 📞 지원
+## 지원
 
 문제가 있거나 기능 요청이 있으시면 [GitHub Issues](https://github.com/your-username/widget-dashboard/issues)에 등록해 주세요.
-
----
-
-**Widget Dashboard Library** - 유연하고 정확한 위젯 대시보드를 위한 React 라이브러리 🎯
