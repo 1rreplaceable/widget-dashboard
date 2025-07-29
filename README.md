@@ -2,7 +2,7 @@
 
 유연한 위젯 대시보드와 드래그앤드롭 기능을 제공하는 React 라이브러리입니다.
 
-https://github.com/1rreplaceable/widget-dashboard/assets/1rreplaceable/docs/demo.mov
+![Widget Dashboard Demo](./docs/demo.gif)
 
 ## 주요 기능
 
