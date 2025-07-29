@@ -1,6 +1,6 @@
 {
   "name": "widget-dashboard",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "A flexible widget dashboard library with smooth drag-and-drop functionality",
   "main": "dist/index.js",
   "module": "dist/index.esm.js",
