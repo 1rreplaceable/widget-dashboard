@@ -1,0 +1,64 @@
+.widget-container {
+  background: transparent;
+  border: none;
+  position: absolute;
+  z-index: 1;
+  transition: all 0.3s ease;
+}
+
+.widget-container.edit-mode {
+  border: 2px dashed #333333;
+  z-index: 2;
+}
+
+.widget-container.edit-mode:hover {
+  border-color: #000000;
+  border-style: solid;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.widget-container.dragging {
+  opacity: 0.9;
+  transform: scale(1.02);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+  transition: none;
+}
+
+.widget-content {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.widget-container.edit-mode .widget-content {
+  pointer-events: auto;
+}
+
+.widget-resize-handle {
+  position: absolute;
+  bottom: 4px;
+  right: 4px;
+  width: 12px;
+  height: 12px;
+  background: #333333;
+  border: 1px solid #ffffff;
+  opacity: 0.8;
+  border-radius: 2px;
+  cursor: nw-resize;
+  transition: all 0.2s ease;
+  pointer-events: auto;
+}
+
+.widget-resize-handle:hover {
+  background: #000000;
+  opacity: 1;
+  transform: scale(1.2);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+  .widget-container {
+    min-height: 80px;
+  }
+} 
