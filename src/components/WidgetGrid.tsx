@@ -47,7 +47,10 @@ export const WidgetGrid: React.FC<WidgetGridProps> = ({
   };
 
   return (
-    <div className={`widget-grid ${isEditMode ? 'edit-mode' : ''}`} style={gridStyle}>
+    <div 
+      className={`widget-grid ${isEditMode ? 'edit-mode' : ''}`} 
+      style={gridStyle}
+    >
       {layouts.map((layout) => (
         <WidgetContainer
           key={layout.id}
