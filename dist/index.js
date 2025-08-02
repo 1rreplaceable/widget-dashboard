@@ -42,7 +42,14 @@ var WidgetContainer = function (_a) {
     var _h = react.useState(false), isResizing = _h[0], setIsResizing = _h[1];
     var _j = react.useState({ x: 0, y: 0, mouseX: 0, mouseY: 0 }), dragStart = _j[0], setDragStart = _j[1];
     var _k = react.useState({ width: 0, height: 0, mouseX: 0, mouseY: 0 }), resizeStart = _k[0], setResizeStart = _k[1];
+    var tempPositionRef = react.useRef(layout.position);
+    var tempSizeRef = react.useRef(layout.size);
     var containerRef = react.useRef(null);
+    // layout이 변경되면 임시 상태도 업데이트
+    react.useEffect(function () {
+        tempPositionRef.current = layout.position;
+        tempSizeRef.current = layout.size;
+    }, [layout.position, layout.size]);
     var handleMouseDown = function (e) {
         if (!isEditMode)
             return;
@@ -70,9 +77,15 @@ var WidgetContainer = function (_a) {
             // 경계 체크 - 대시보드 영역 내에서만 이동 가능
             var clampedX = Math.max(0, Math.min(newX, maxWidth - layout.size.width));
             var clampedY = Math.max(0, Math.min(newY, maxHeight - layout.size.height));
-            // 위치가 변경된 경우에만 업데이트
-            if (clampedX !== layout.position.x || clampedY !== layout.position.y) {
-                onMove === null || onMove === void 0 ? void 0 : onMove(layout.id, { x: clampedX, y: clampedY });
+            // 임시 상태만 업데이트 (실제 콜백은 호출하지 않음)
+            // 값이 실제로 변경된 경우에만 업데이트
+            if (clampedX !== tempPositionRef.current.x || clampedY !== tempPositionRef.current.y) {
+                tempPositionRef.current = { x: clampedX, y: clampedY };
+                // DOM 직접 업데이트로 리렌더링 방지
+                if (containerRef.current) {
+                    containerRef.current.style.left = "".concat(clampedX, "px");
+                    containerRef.current.style.top = "".concat(clampedY, "px");
+                }
             }
         }
         if (isResizing) {
@@ -85,13 +98,27 @@ var WidgetContainer = function (_a) {
             // 경계 체크 - 대시보드 영역을 넘지 않도록 크기 제한
             var clampedWidth = Math.max(gridSize, Math.min(newWidth, maxWidth - layout.position.x));
             var clampedHeight = Math.max(gridSize, Math.min(newHeight, maxHeight - layout.position.y));
-            // 크기가 변경된 경우에만 업데이트
-            if (clampedWidth !== layout.size.width || clampedHeight !== layout.size.height) {
-                onResize === null || onResize === void 0 ? void 0 : onResize(layout.id, { width: clampedWidth, height: clampedHeight });
+            // 임시 상태만 업데이트 (실제 콜백은 호출하지 않음)
+            // 값이 실제로 변경된 경우에만 업데이트
+            if (clampedWidth !== tempSizeRef.current.width || clampedHeight !== tempSizeRef.current.height) {
+                tempSizeRef.current = { width: clampedWidth, height: clampedHeight };
+                // DOM 직접 업데이트로 리렌더링 방지
+                if (containerRef.current) {
+                    containerRef.current.style.width = "".concat(clampedWidth, "px");
+                    containerRef.current.style.height = "".concat(clampedHeight, "px");
+                }
             }
         }
     };
     var handleMouseUp = function () {
+        // 드래그가 끝났을 때만 실제 콜백 호출
+        if (isDragging) {
+            onMove === null || onMove === void 0 ? void 0 : onMove(layout.id, tempPositionRef.current);
+        }
+        // 리사이즈가 끝났을 때만 실제 콜백 호출
+        if (isResizing) {
+            onResize === null || onResize === void 0 ? void 0 : onResize(layout.id, tempSizeRef.current);
+        }
         setIsDragging(false);
         setIsResizing(false);
     };
