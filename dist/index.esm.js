@@ -168,5 +168,5 @@ var WidgetDashboard = function (_a) {
     return (jsx("div", __assign({ className: "widget-dashboard" }, { children: jsx(WidgetGrid, { layouts: layoutsState, isEditMode: isEditMode, onLayoutChange: handleLayoutChange, width: width, height: height, gridSize: gridSize }) })));
 };
 
-export { WidgetContainer, WidgetDashboard, WidgetGrid, WidgetDashboard as default };
+export { WidgetContainer, WidgetDashboard, WidgetGrid };
 //# sourceMappingURL=index.esm.js.map

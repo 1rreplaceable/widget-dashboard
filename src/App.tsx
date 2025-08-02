@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { WidgetDashboard, WidgetLayout } from 'widget-dashboard';
-import 'widget-dashboard/dist/index.css';
+import { WidgetDashboard } from './components/WidgetDashboard';
+import { WidgetLayout } from './types/widget';
+import './components/WidgetDashboard.css';
 
 // 간단한 테스트 위젯들
 const RedWidget: React.FC = () => (

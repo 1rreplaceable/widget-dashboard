@@ -1,7 +1,5 @@
 'use strict';
 
-Object.defineProperty(exports, '__esModule', { value: true });
-
 var jsxRuntime = require('react/jsx-runtime');
 var react = require('react');
 
@@ -175,5 +173,4 @@ var WidgetDashboard = function (_a) {
 exports.WidgetContainer = WidgetContainer;
 exports.WidgetDashboard = WidgetDashboard;
 exports.WidgetGrid = WidgetGrid;
-exports.default = WidgetDashboard;
 //# sourceMappingURL=index.js.map

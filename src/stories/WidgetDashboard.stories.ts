@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
 import { WidgetDashboard } from '../components/WidgetDashboard';
+import { WidgetLayout } from '../types/widget';
 
 // 간단한 색상 박스 컴포넌트들
 const RedBox = () => React.createElement('div', {

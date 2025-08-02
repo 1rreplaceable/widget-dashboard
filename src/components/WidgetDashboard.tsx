@@ -1,16 +1,7 @@
 import React, { useState } from 'react';
-import { WidgetLayout } from '../types/widget';
+import { WidgetLayout, WidgetDashboardProps } from '../types/widget';
 import { WidgetGrid } from './WidgetGrid';
 import './WidgetDashboard.css';
-
-interface WidgetDashboardProps {
-  layouts: WidgetLayout[];
-  isEditMode?: boolean;
-  onLayoutsChange?: (layouts: WidgetLayout[]) => void;
-  width?: number;
-  height?: number;
-  gridSize?: number;
-}
 
 export const WidgetDashboard: React.FC<WidgetDashboardProps> = ({
   layouts,
