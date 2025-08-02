@@ -59,7 +59,7 @@ export const WidgetContainer: React.FC<WidgetContainerProps> = ({
       const newX = Math.round((dragStart.x + deltaX) / gridSize) * gridSize;
       const newY = Math.round((dragStart.y + deltaY) / gridSize) * gridSize;
       
-      // 경계 체크 - 격자에 정확히 맞춤
+      // 경계 체크 - 대시보드 영역 내에서만 이동 가능
       const clampedX = Math.max(0, Math.min(newX, maxWidth - layout.size.width));
       const clampedY = Math.max(0, Math.min(newY, maxHeight - layout.size.height));
 
@@ -79,7 +79,7 @@ export const WidgetContainer: React.FC<WidgetContainerProps> = ({
       const newWidth = Math.round((resizeStart.width + deltaX) / gridSize) * gridSize;
       const newHeight = Math.round((resizeStart.height + deltaY) / gridSize) * gridSize;
       
-      // 경계 체크 - 격자에 정확히 맞춤
+      // 경계 체크 - 대시보드 영역을 넘지 않도록 크기 제한
       const clampedWidth = Math.max(gridSize, Math.min(newWidth, maxWidth - layout.position.x));
       const clampedHeight = Math.max(gridSize, Math.min(newHeight, maxHeight - layout.position.y));
 

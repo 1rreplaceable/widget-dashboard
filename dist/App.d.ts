@@ -1,3 +1,3 @@
-import './App.css';
+import 'widget-dashboard/dist/index.css';
 declare function App(): import("react/jsx-runtime").JSX.Element;
 export default App;
