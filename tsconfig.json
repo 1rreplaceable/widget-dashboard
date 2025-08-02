@@ -24,14 +24,14 @@
     "outDir": "dist"
   },
   "include": [
-    "src"
+    "src",
+    ".storybook"
   ],
   "exclude": [
     "node_modules",
     "dist",
     "build",
     "storybook-static",
-    "src/stories",
     "src/**/*.css"
   ]
 }

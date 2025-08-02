@@ -1,5 +1,5 @@
 import React from 'react';
-import type { Meta, StoryObj } from '@storybook/react-webpack5';
+import { Meta, StoryObj } from '@storybook/react';
 import { WidgetDashboard } from '../components/WidgetDashboard';
 
 // 간단한 색상 박스 컴포넌트들
